@@ -1,0 +1,12 @@
+.jumbotron {
+    margin-top: 20px;
+    background-color: rgb(255, 105, 0 , .75);
+    border-radius: 5px;
+}
+.card-header{
+    background-color: rgba(7, 75, 246, 0.625)
+}
+
+.card-body {
+    border-color: rgb(225, 232, 250, .5);
+}
