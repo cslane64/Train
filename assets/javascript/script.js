@@ -12,10 +12,7 @@
   var trainData = firebase.database();
   
 
-  
-  
-
-  $("#add-train-data-btn").on("click", function(){
+    $("#add-train-data-btn").on("click", function(){
     var name = $("#train-name-input").val().trim();
     var destination = $("#destination-input").val().trim();
     var firstTrain = moment($("#first-train-input").val().trim(), "HH:mm").format("X");
@@ -45,19 +42,14 @@ trainData.ref().on("child_added", function(snapshot) {
     var firstTrain = snapshot.val().firstTrain;
     var frequency = snapshot.val().frequency;
 
-    
-
-    
-    
-        
     var lastTrain = moment().diff(moment.unix(firstTrain), "minutes")%frequency;
     var nextTrain = frequency - lastTrain;
     var arrival = moment().add(nextTrain, "m").format("hh:mm A");
+
+    console.log(lastTrain);
+    console.log(nextTrain);
+    console.log(arrival);
     
-    //console.log(lastTrain);
-    //console.log(nextTrain);
-    //console.log(arrival);
-    
-    $("#schedule-table > tBody").append("<tr><td>"+name+"</td><td>"+destination+"</td><td>"+frequency+"</td><td>"+arrival+"</td><td>"+nextTrain+"</td></tr>");
+    $("#schedule-table > tBody").append("<tr><td>"+name+"</td><td>"+destination+"</td><td>"+frequency+"</td><td>"+arrival+"</td><td id='next'>"+nextTrain+"</td></tr>");
 })
 
