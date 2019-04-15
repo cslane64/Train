@@ -49,7 +49,11 @@ trainData.ref().on("child_added", function(snapshot) {
     console.log(lastTrain);
     console.log(nextTrain);
     console.log(arrival);
+  
     
-    $("#schedule-table > tBody").append("<tr><td>"+name+"</td><td>"+destination+"</td><td>"+frequency+"</td><td>"+arrival+"</td><td id='next'>"+nextTrain+"</td></tr>");
-})
+    
+    $("#schedule-table > tBody").append("<tr class='train-row'><td>"+name+"</td><td>"+destination+"</td><td>"+frequency+"</td><td>"+arrival+"</td><td><span class = 'span'>"+nextTrain+"</span></td></tr>");
 
+    var count = $('#body').children('tr').length;
+    console.log(count);
+});
