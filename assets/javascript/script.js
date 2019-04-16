@@ -54,6 +54,5 @@ trainData.ref().on("child_added", function(snapshot) {
     
     $("#schedule-table > tBody").append("<tr class='train-row'><td>"+name+"</td><td>"+destination+"</td><td>"+frequency+"</td><td>"+arrival+"</td><td><span class = 'span'>"+nextTrain+"</span></td></tr>");
 
-    var count = $('#body').children('tr').length;
-    console.log(count);
+    
 });
